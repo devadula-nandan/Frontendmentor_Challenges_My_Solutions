@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,3 +15,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
