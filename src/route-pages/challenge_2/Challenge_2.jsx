@@ -20,20 +20,20 @@ export const Challenge_2 = () => {
                             <img src={cf} alt="" className=' lg:ml-[calc(33vw-18rem)]' />
                             <div className="w-full cfc absolute top-0 lg:left-[calc(33vw-18rem)]">
                                 <svg fill="none" xmlns="http://www.w3.org/2000/svg" className=" w-full max-w-[447px]" viewBox="0 0 240 40"><ellipse cx="28" cy="23.5" rx="12" ry="12" fill="#fff"></ellipse><path d="M 60 24 c 0 3.339 -2.7042 6.045 -6.039 6.045 c -3.3354 0 -6.039 -2.706 -6.039 -6.045 c 0 -3.339 2.7036 -6.045 6.039 -6.045 c 3.3348 0 6.039 2.706 6.039 6.045 Z" stroke="#fff"></path></svg>
-                                <svg className=' w-full max-w-[447px] fill-white' fontFamily='monospace' letterSpacing="1.6" fontSize="1.3em" fontWeight={600} viewBox="0 0 240 50">
+                                <svg className=' w-full max-w-[447px] fill-white' fontFamily="'Noto Sans Mono', monospace" letterSpacing="1.6" fontSize="0.98em" fontWeight={600} viewBox="0 0 240 50">
                                     <text x="16" y="44">{cardInfo.number ? cardInfo.number.split(/(.{4})/).filter(O => O).join(" ") : "0000 0000 0000 0000"}</text>
                                 </svg>
-                                <svg className=' w-full max-w-[447px] fill-white' letterSpacing="2" fontSize="0.65em" fontFamily='monospace' fontWeight={600} viewBox="0 0 240 42">
+                                <svg className=' w-full max-w-[447px] fill-white' letterSpacing="2" fontSize="0.5em" fontFamily="'Noto Sans Mono', monospace" fontWeight={600} viewBox="0 0 240 42">
                                     <text x="16" y="24">{cardInfo.name ? cardInfo.name : "JANE APPLESEED"}</text>
-                                    <text x="190" y="24">{cardInfo.expiryM ? cardInfo.expiryM : "00"}/{cardInfo.expiryY ? cardInfo.expiryY : "00"}</text>
+                                    <text x="192" y="24">{cardInfo.expiryM ? cardInfo.expiryM : "00"}/{cardInfo.expiryY ? cardInfo.expiryY : "00"}</text>
                                 </svg>
                             </div>
                         </div>
                         <div className="relative ml-12 mr-4 lg:ml-0 lg:mr-0">
                             <img src={cb} alt="" className=' lg:ml-[calc(33.33vw-14rem)]' />
                             <div className="w-full cbc absolute max-w-[447px] top-0 lg:left-[calc(33.33vw-14rem)] overflow-hidden">
-                                <svg className=' w-full max-w-[447px] fill-white ml-[80%] mt-[21.5%]' fontWeight={600} fontSize="0.8em" viewBox="0 0 240 21" fontFamily='monospace'>
-                                    <text x="0" y="16.5">{cardInfo.cvv ? cardInfo.cvv : "000"}</text>
+                                <svg className=' w-full max-w-[447px] fill-white ml-[80%] mt-[21.5%]' fontWeight={600} fontSize="0.8em" viewBox="0 0 240 21" fontFamily="'Noto Sans Mono', monospace">
+                                    <text x="0" y="17.5">{cardInfo.cvv ? cardInfo.cvv : "000"}</text>
                                 </svg>
                             </div>
                         </div>
