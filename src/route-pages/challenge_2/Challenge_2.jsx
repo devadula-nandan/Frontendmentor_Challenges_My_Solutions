@@ -62,8 +62,8 @@ export const Challenge_2 = () => {
                                             </div>
                                         </div>
                                         <div className="flex flex-col w-1/2 mt-2 ml-4">
-                                            <label htmlFor="password" className=" text-violet-900 font-semibold tracking-widest">EXP. DATE (MM/YY)</label>
-                                            <input id="card-number" name="card-number" type="number" autoComplete="number" required className="mt-2 relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-violet-500 focus:outline-none focus:ring-violet-500 sm:text-md font-semibold" placeholder="CVV" onWheel={(e) => { e.target.blur() }} value={cardInfo.cvv} onInput={(e) => { e.target.value.length < 4 && setCardInfo({ ...cardInfo, cvv: e.target.value }) }} />
+                                            <label htmlFor="password" className=" text-violet-900 font-semibold tracking-widest">CVC</label>
+                                            <input id="card-number" name="card-number" type="number" autoComplete="number" required className="mt-2 relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-violet-500 focus:outline-none focus:ring-violet-500 sm:text-md font-semibold" placeholder="e.g. 123" onWheel={(e) => { e.target.blur() }} value={cardInfo.cvv} onInput={(e) => { e.target.value.length < 4 && setCardInfo({ ...cardInfo, cvv: e.target.value }) }} />
                                         </div>
                                         
 
