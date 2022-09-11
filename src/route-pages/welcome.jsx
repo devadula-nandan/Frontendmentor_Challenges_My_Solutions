@@ -5,7 +5,7 @@ export const Welcome = () => {
     const navigate = useNavigate()
     return (
         <div className="w-screen h-screen bg-slate-200">
-            <h1 className=" text-center font-semibold text-6xl py-12">Frontend mentor challenges</h1>
+            <h1 className=" text-center font-semibold text-3xl md:text-6xl py-12">Frontend mentor challenges</h1>
             <div className="container mx-auto">
                 <div className="flex flex-wrap justify-center">
                     <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-4 mb-4">
