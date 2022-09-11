@@ -2,65 +2,6 @@
   box-sizing: border-box;
 }
 
-.range-slider {
-  appearance: none;
-  outline: none;
-  height: 6px;
-  border-radius: 5px;
-  background-color: #0000004d;
-}
-
-.range-slide::-webkit-slider-runnable-track {
-  background-color: white;
-}
-
-.range-slider::-webkit-slider-thumb {
-  background: #fafafa;
-  appearance: none;
-  box-shadow: 1px 2px 26px 1px #bdbdbd;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
-
-input[type=checkbox] {
-  position: relative;
-  cursor: pointer;
-}
-
-input[type=checkbox]:before {
-  content: "";
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  top: -2px;
-  left: 0;
-  border: 2px solid #cdd5e0;
-  border-radius: 2px;
-  padding: 1px;
-  background-color: #212936;
-}
-
-input[type=checkbox]:checked:before {
-  background-color: #86efac;
-  border: 2px solid #86efac;
-}
-
-input[type=checkbox]:checked:after {
-  content: "";
-  display: block;
-  width: 6px;
-  height: 11px;
-  border: solid #1f2937;
-  border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  position: absolute;
-  top: 0px;
-  left: 6px;
-}
-
 .qoHsFYAt {
   background-image: url(./route-pages/challenge_2/images/bg-main-desktop.png);
 }

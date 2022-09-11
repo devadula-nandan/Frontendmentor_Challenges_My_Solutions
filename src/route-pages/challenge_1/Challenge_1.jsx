@@ -1,5 +1,6 @@
 import { PassJS } from 'passjs-generator';
 import { useState } from 'react';
+import './css/challenge_1.css'
 // https://www.npmjs.com/package/passjs-generator
 // password generator https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh
 export const Challenge_1 = () => {
