@@ -5,6 +5,7 @@ import { Clock } from './route-pages/clock';
 import { Challenge_1 } from './route-pages/challenge_1/Challenge_1';
 import { Challenge_2 } from './route-pages/challenge_2/Challenge_2';
 import { Challenge_3 } from './route-pages/challenge_3/Challenge_3';
+import { Challenge_4 } from './route-pages/challenge_4/Challenge_4';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/Challenge_1" element={<Challenge_1 />} />
           <Route path="/Challenge_2" element={<Challenge_2 />} />
           <Route path="/Challenge_3" element={<Challenge_3 />} />
+          <Route path="/Challenge_4" element={<Challenge_4 />} />
           <Route path='/Clock' element={<Clock />} />
         </Routes>
         {/* <AppFooter /> */}
