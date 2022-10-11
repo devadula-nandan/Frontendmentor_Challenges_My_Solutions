@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Welcome } from './route-pages/welcome';
 import { Clock } from './route-pages/clock';
+import { VfmCalc } from './route-pages/vfmCalc';
 import { Challenge_1 } from './route-pages/challenge_1/Challenge_1';
 import { Challenge_2 } from './route-pages/challenge_2/Challenge_2';
 import { Challenge_3 } from './route-pages/challenge_3/Challenge_3';
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Challenge_4" element={<Challenge_4 />} />
           <Route path="/Challenge_5" element={<Challenge_5 />} />
           <Route path='/Clock' element={<Clock />} />
+          <Route path='/VfmCalc' element={<VfmCalc />} />
         </Routes>
         {/* <AppFooter /> */}
       </Router>
