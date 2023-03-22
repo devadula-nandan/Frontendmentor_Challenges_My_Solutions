@@ -11,3 +11,17 @@
     background-image: url(./route-pages/challenge_2/images/bg-main-mobile.png);
   }
 }
+
+.word{
+  animation: fadeInUp2 0.3s ease-in-out;
+}
+@keyframes fadeInUp2 {
+  0% {
+    opacity: 0;
+    margin-top: 1rem;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0rem;
+  }
+}
