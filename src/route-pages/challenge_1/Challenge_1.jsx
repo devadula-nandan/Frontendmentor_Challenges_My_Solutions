@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './css/challenge_1.css'
 // https://www.npmjs.com/package/passjs-generator
 // password generator https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh
-export const Challenge_1 = () => {
+export const Challenge1 = () => {
     const [params, setParams] = useState({ le: 6, u: false, l: false, n: false,s:false})
     const [password, setPassword] = useState("")
     const generatePassword = () => {

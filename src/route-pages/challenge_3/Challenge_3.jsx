@@ -1,7 +1,7 @@
 
 import './css/challenge_3.css'
 import { useState } from 'react'
-export const Challenge_3 = () => {
+export const Challenge3 = () => {
     return (
         <>
             <div className=" bg-gray-200 w-screen min-h-screen flex items-center">

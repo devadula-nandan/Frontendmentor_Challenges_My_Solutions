@@ -4,7 +4,7 @@ import { useState } from 'react'
 import {BarChart} from './components/BarChart'
 const data = require("./mockups/data.json")
 
-export const Challenge_4 = () => {
+export const Challenge4 = () => {
     return (
         <>
             <div className=" bg-[#f5eadd] w-screen min-h-screen flex items-center">

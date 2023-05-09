@@ -2,7 +2,7 @@ import cf from './images/bg-card-front.png'
 import cb from './images/bg-card-back.png'
 import './css/challenge_2.css'
 import { useState } from 'react'
-export const Challenge_2 = () => {
+export const Challenge2 = () => {
     const [cardInfo, setCardInfo] = useState({
         number: "",
         name: "",
