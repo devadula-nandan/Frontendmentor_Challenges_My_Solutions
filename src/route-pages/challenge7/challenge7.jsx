@@ -20,6 +20,13 @@ export const Challenge7 = () => {
             setError(e.response.data)
         }
     }
+    useEffect(() => {
+        getData() 
+    },[keyword])
+    const playAudio = (src) => {
+        const audio = new Audio(src)
+        audio.play()
+    }
 
     return (
         <>
@@ -48,7 +55,7 @@ export const Challenge7 = () => {
                                     <li><a>Submenu 2</a></li>
                                 </ul>
                             </li>
-                            <li tabIndex={1}>
+                            <li tabIndex={0}>
                                 <a>
                                     theme
                                     <svg className="fill-current text-primary" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
@@ -63,24 +70,70 @@ export const Challenge7 = () => {
                     </div>
                 </div>
                 <div className="relative mt-8">
-                    <input type="text" placeholder="Type here" className="input font-semibold w-full pr-11 bg-base-200" onChange={(e) => setKeyword(e.target.value)} />
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="p-3 bi bi-search absolute right-[2px] top-1/2 -translate-y-1/2 text-primary w-11 cursor-pointer hover:bg-black/5 transition-all rounded-md" viewBox="0 0 16 16" onClick={() => getData()}>
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                    </svg>
+                    <form action="" onSubmit={(e) => { e.preventDefault(); getData() }}>
+                        <input type="text" value={keyword} placeholder="Type here" className="input font-semibold w-full pr-11 bg-base-200" onChange={(e) => setKeyword(e.target.value)} />
+                        <svg tabIndex={0} xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="p-3 bi bi-search absolute right-[2px] top-1/2 -translate-y-1/2 text-primary w-11 cursor-pointer hover:bg-black/5 transition-all rounded-md" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+
+                    </form>
+
                 </div>
-                {wordData?.map((result) => {
+                {wordData?.map((result, index) => {
                     return (
-                        <div key={result.id} className="mt-6 md:mt-10">
+                        <div key={index} className="mt-6 md:mt-10">
                             <div className="flex">
                                 <div className="flex flex-col">
-                                <h6 className="text-2xl md:text-4xl lg:text-6xl mb-3 font-bold">{result.word}</h6>
-                            <h1 className="text-2xl font-semibold text-primary mb-6">{result.phonetic}</h1>
+                                    <h6 className="text-4xl md:text-5xl lg:text-6xl mb-3 font-bold">{result.word}</h6>
+                                    <h1 className="text-2xl font-semibold text-primary mb-6">{result.phonetic}</h1>
                                 </div>
+                                {result.phonetics.map((phonetic, index) => (
+                                    phonetic.audio && 
+                                    <>
+                                        {/* <audio className=' hidden' key={index} src={phonetic.audio} controls></audio> */}
+                                        <div className="w-16 h-16 md:w-24 md:h-24 hover:scale-[1.1] mt-auto mb-8 transition-all active:scale-90 bg-primary/30 rounded-full cursor-pointer ml-auto flex items-center justify-center" onClick={() => playAudio(phonetic.audio)}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-play-fill w-8 text-primary" viewBox="0 0 16 16">
+                                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                                            </svg>
+                                        </div>
+                                    </>
+                                ))}
                             </div>
-                            <div className="flex">
-                            <h1 className="text-2xl font-bold">{result.meanings[0].partOfSpeech}</h1>
-                            <div className='ml-5 bg-base-300 w-full h-[1px] my-auto'></div>
-                            </div>
+
+                            {result.meanings.map((meaning, index) => (
+                                <>
+                                    <div className="flex mb-6">
+                                        <h1 key={index} className="text-xl md:text-2xl font-bold">{meaning.partOfSpeech}</h1>
+                                        <div className='ml-5 bg-base-300 w-full h-[1px] my-auto'></div>
+
+                                    </div>
+                                    <p className='mb-4 text-base-content/70 font-normal text-lg'>Meaning</p>
+                                    <ul className='list-disc pl-4 marker:text-primary mb-4'>
+                                        {meaning.definitions.map((definition, index) => (
+                                            <li key={index}>{definition.definition}</li>
+                                        ))}
+                                    </ul>
+                                    {meaning.synonyms.length > 0 && (
+                                        <p className='mb-4 text-base-content/70 font-normal text-lg'>Synonyms: {meaning.synonyms.map((synonym, index) => (
+                                            <>
+                                            <p key={index} onClick={()=>{setKeyword(synonym); getData()}} className='text-primary font-semibold text-lg inline cursor-pointer'>{synonym}</p><span>, </span>
+                                            
+                                            </>
+                                            ))}</p>
+                                    )}
+                                    {meaning.antonyms.length > 0 && (
+                                        <p className='mb-4 text-base-content/70 font-normal text-lg'>Antonyms: {meaning.antonyms.map((antonym, index) => (
+                                            <a key={index} href={antonym} className='text-primary font-semibold text-lg'>{antonym}</a>
+                                        ))}</p>
+                                    )}
+                                        
+                                    
+
+
+                                </>
+                            ))}
+
+
                         </div>
                     )
                 })
