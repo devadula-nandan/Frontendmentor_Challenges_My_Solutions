@@ -5,9 +5,7 @@ export const Challenge7 = () => {
     const [keyword, setKeyword] = useState('')
     const [wordData, setWordData] = useState(undefined)
     const [error, setError] = useState({})
-    useEffect(() => {
-        document.getElementsByTagName('html')[0].setAttribute('data-theme', 'light')
-    })
+
     const getData = async () => {
         if (!keyword) return
         try {
@@ -21,8 +19,15 @@ export const Challenge7 = () => {
         }
     }
     useEffect(() => {
-        getData() 
-    },[keyword])
+        let timeoutId;
+        if (keyword) {
+          timeoutId = setTimeout(() => {
+            getData();
+          }, 800);
+        }
+    
+        return () => clearTimeout(timeoutId);
+      }, [keyword])
     const playAudio = (src) => {
         const audio = new Audio(src)
         audio.play()
@@ -90,9 +95,8 @@ export const Challenge7 = () => {
                                 {result.phonetics.map((phonetic, index) => (
                                     phonetic.audio && 
                                     <>
-                                        {/* <audio className=' hidden' key={index} src={phonetic.audio} controls></audio> */}
-                                        <div className="w-16 h-16 md:w-24 md:h-24 hover:scale-[1.1] mt-auto mb-8 transition-all active:scale-90 bg-primary/30 rounded-full cursor-pointer ml-auto flex items-center justify-center" onClick={() => playAudio(phonetic.audio)}>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-play-fill w-8 text-primary" viewBox="0 0 16 16">
+                                        <div key={index} className="w-16 h-16 md:w-24 md:h-24 hover:scale-[1.1] mt-auto mb-8 transition-all active:scale-90 bg-primary/30 rounded-full cursor-pointer ml-auto flex items-center justify-center" onClick={() => playAudio(phonetic.audio)}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-play-fill w-8 text-primary" viewBox="0 0 16 16">
                                                 <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
                                             </svg>
                                         </div>
@@ -116,14 +120,17 @@ export const Challenge7 = () => {
                                     {meaning.synonyms.length > 0 && (
                                         <p className='mb-4 text-base-content/70 font-normal text-lg'>Synonyms: {meaning.synonyms.map((synonym, index) => (
                                             <>
-                                            <p key={index} onClick={()=>{setKeyword(synonym); getData()}} className='text-primary font-semibold text-lg inline cursor-pointer'>{synonym}</p><span>, </span>
+                                            <span key={index} onClick={()=>{setKeyword(synonym); getData()}} className='text-primary font-semibold text-lg inline cursor-pointer'>{synonym}</span><span>, </span>
                                             
                                             </>
                                             ))}</p>
                                     )}
                                     {meaning.antonyms.length > 0 && (
                                         <p className='mb-4 text-base-content/70 font-normal text-lg'>Antonyms: {meaning.antonyms.map((antonym, index) => (
-                                            <a key={index} href={antonym} className='text-primary font-semibold text-lg'>{antonym}</a>
+                                            <>
+                                            <a key={index} href={antonym} className='text-primary font-semibold text-lg'>{antonym}</a><span>, </span>
+                                            </>
+                                            
                                         ))}</p>
                                     )}
                                         
