@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { Welcome } from './route-pages/welcome';
 import { Clock } from './route-pages/clock';
 import { VfmCalc } from './route-pages/vfmCalc';
+import { Page1 } from './route-pages/page1';
 import { CustomComponents } from './route-pages/custom_components';
 import { Challenge1 } from './route-pages/challenge_1/Challenge_1';
 import { Challenge2 } from './route-pages/challenge_2/Challenge_2';
@@ -29,6 +30,7 @@ function App() {
           <Route path="/Challenge_7" element={<Challenge7 />} />
           <Route path='/Clock' element={<Clock />} />
           <Route path='/VfmCalc' element={<VfmCalc />} />
+          <Route path='/page1' element={<Page1 />} />
           <Route path='/CustomComponents' element={<CustomComponents />} />
           <Route path='/BlackJack' element={<BlackJack />} />
           <Route path="*" element={<h1>404</h1>} />
