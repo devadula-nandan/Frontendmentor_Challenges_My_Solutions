@@ -41,8 +41,10 @@ export const Page1 = () => {
           <div className="shape3 bg-black absolute right-0 h-[20vmax] w-[20vmax] translate-x-1/2 -translate-y-1/2 rounded-full"></div>
         </div>
       </div>
+      <div className="absolute">
       <button className="btn mr-4" onClick={()=>{setAngle(angle-180);setCi(ci === 0 ? 4 : ci-1); rotateShapes()}}>prev</button>
       <button className="btn" onClick={()=>{setAngle(angle+180);setCi(ci === 4 ? 0 : ci+1); rotateShapes()}}>next</button>
+      </div>
     </div>
   )
 }
