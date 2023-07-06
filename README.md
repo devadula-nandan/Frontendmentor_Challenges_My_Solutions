@@ -1,3 +1,4 @@
+<!-- '{"name":"Frontend Mentor Challenges","version": 12,"tech": ["HTML","CSS","Tailwind"],"tags":["frontend","api"],"snapshots":[]}' -->
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
