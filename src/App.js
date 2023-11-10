@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Welcome } from './route-pages/welcome';
 import { Clock } from './route-pages/clock';
+import {Clockv2} from './route-pages/clockv2';
 import { VfmCalc } from './route-pages/vfmCalc';
 import { Page1 } from './route-pages/page1';
 import { CustomComponents } from './route-pages/custom_components';
@@ -13,8 +14,12 @@ import { Challenge5 } from './route-pages/challenge_5/Challenge_5';
 import { Challenge6 } from './route-pages/challenge_6/Challenge_6';
 import { Challenge7 } from './route-pages/challenge7/challenge7';
 import { BlackJack } from './route-pages/blackJack';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    document.getElementsByTagName('html')[0].setAttribute('data-theme', localStorage.getItem('theme'))
+  }, [])
   return (
     <div className="App">
       <Router>
@@ -29,6 +34,7 @@ function App() {
           <Route path="/Challenge_6" element={<Challenge6 />} />
           <Route path="/Challenge_7" element={<Challenge7 />} />
           <Route path='/Clock' element={<Clock />} />
+          <Route path='/Clockv2' element={<Clockv2 />} />
           <Route path='/VfmCalc' element={<VfmCalc />} />
           <Route path='/page1' element={<Page1 />} />
           <Route path='/CustomComponents' element={<CustomComponents />} />

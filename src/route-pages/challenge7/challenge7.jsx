@@ -67,7 +67,7 @@ export const Challenge7 = () => {
                                 </a>
                                 <ul className="p-2 bg-base-100">
                                     {themes.map((theme, index) => (
-                                        <li key={index} onClick={() => document.getElementsByTagName('html')[0].setAttribute('data-theme', theme)} className={theme}> <a>{theme}</a></li>
+                                        <li key={index} onClick={() => {document.getElementsByTagName('html')[0].setAttribute('data-theme', theme);localStorage.setItem('theme', theme);}} className={theme}> <a>{theme}</a></li>
                                     ))}
                                 </ul>
                             </li>
