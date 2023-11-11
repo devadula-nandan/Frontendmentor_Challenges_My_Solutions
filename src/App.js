@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Welcome } from './route-pages/welcome';
 import { Clock } from './route-pages/clock';
-import {Clockv2} from './route-pages/clockv2';
+import {Clockv2} from './route-pages/clock/clockv2';
 import { VfmCalc } from './route-pages/vfmCalc';
 import { Page1 } from './route-pages/page1';
 import { CustomComponents } from './route-pages/custom_components';
