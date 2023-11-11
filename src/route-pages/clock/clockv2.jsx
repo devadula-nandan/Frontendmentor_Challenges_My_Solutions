@@ -12,16 +12,6 @@ export const Clockv2 = () => {
         document.getElementsByTagName('html')[0].setAttribute('data-theme', localStorage.getItem('theme'));
     }, []);
     useEffect(() => {
-        const interval = setInterval(() => {
-            setAngle({
-                s: angle.s + 1,
-                m: angle.m + 1,
-                h: angle.h + 1
-            })
-        }, 20);
-        return () => clearInterval(interval);
-    }, [angle]);
-    useEffect(() => {
         const updateClock = () => {
             const now = new Date();
             const seconds = now.getSeconds();
