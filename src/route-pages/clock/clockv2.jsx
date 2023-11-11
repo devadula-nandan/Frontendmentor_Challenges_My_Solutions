@@ -47,7 +47,7 @@ export const Clockv2 = () => {
     }, []);
 
     return (
-        <div className='p-2 w-[100vmin] h-[100vmin] relative'>
+        <div className='w-[100vmin] h-[100vmin] relative'>
             <Dial />
             <Second angle={angle.s} />
             <Minute angle={angle.m} />
