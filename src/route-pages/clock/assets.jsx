@@ -1,5 +1,5 @@
 export const Dial = () =>
-    <svg style={{filter: "drop-shadow(0 0px 1px rgb(0 0 0 / 0.4))"}} id="dial" className=" bg-base-content/10 rounded-full border-base-300 border-[2vmin] max-h-screen" xmlns="http://www.w3.org/2000/svg" version="1.0" preserveAspectRatio="xMidYMid meet" viewBox="412 412.1 4176 4175.9">
+    <svg id="dial" className="drop-shadow bg-base-content/10 rounded-full border-base-300 border-[2vmin] max-h-screen" xmlns="http://www.w3.org/2000/svg" version="1.0" preserveAspectRatio="xMidYMid meet" viewBox="412 412.1 4176 4175.9">
         <g className=" fill-primary" transform="translate(0,5000) scale(0.100000,-0.100000)" stroke="none">
             <path className=" fill-secondary" d="M24628 45672 l-358 -207 0 -1352 0 -1351 365 -211 365 -211 365 211 365 211 0 1351 0 1352 -360 208 c-198 114 -365 207 -372 206 -7 0 -174 -93 -370 -207z"></path>
             <path d="M22897 44759 c-38 -4 -71 -10 -75 -13 -6 -7 93 -965 101 -972 6 -6 198 14 205 21 4 4 -79 826 -94 933 -7 48 -4 47 -137 31z"></path>
